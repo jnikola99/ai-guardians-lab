@@ -14,7 +14,6 @@ const attacks = [
   { name: 'Role Play Attack', path: '/role-play' },
   { name: 'Prefix Injection', path: '/prefix-injection' },
   { name: 'Data Reconstruction', path: '/data-reconstruction' },
-  { name: 'DoS Attack', path: '/dos-attack' },
 ];
 
 export default function Layout({ children }: LayoutProps) {
@@ -33,8 +32,8 @@ export default function Layout({ children }: LayoutProps) {
                 <Shield className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">LLM Security Lab</h1>
-                <p className="text-xs text-muted-foreground hidden sm:block">Interactive Attack Demonstrations</p>
+                <h1 className="text-xl font-bold text-foreground">Laboratorija LLM bezbednosti</h1>
+                <p className="text-xs text-muted-foreground hidden sm:block">Interaktivne demonstracije napada</p>
               </div>
             </Link>
 
@@ -46,7 +45,7 @@ export default function Layout({ children }: LayoutProps) {
                   location.pathname === '/' ? 'text-primary' : 'text-muted-foreground'
                 }`}
               >
-                Overview
+                Pregled
               </Link>
               {attacks.map((attack) => (
                 <Link
@@ -83,7 +82,7 @@ export default function Layout({ children }: LayoutProps) {
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Overview
+                  Pregled
                 </Link>
                 {attacks.map((attack) => (
                   <Link
@@ -113,7 +112,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
-              Educational platform for understanding LLM security vulnerabilities
+              Obrazovna platforma za razumevanje bezbednosnih ranjivosti LLM modela
             </p>
           </div>
         </div>
