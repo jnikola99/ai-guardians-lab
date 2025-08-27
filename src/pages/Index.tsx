@@ -7,7 +7,7 @@ const attacks = [
   {
     id: 'context-ignoring',
     title: 'Context Ignoring Attack',
-    description: 'Attempts to make the model forget or ignore its system instructions and previous context.',
+    description: 'Pokušaj da se model primora da zaboravi ili ignorište sistemska uputstva i prethodni kontekst.',
     icon: Target,
     risk: 'High',
     path: '/context-ignoring',
@@ -16,7 +16,7 @@ const attacks = [
   {
     id: 'prompt-leaking',
     title: 'Prompt Leaking',
-    description: 'Extracting the system prompt or internal instructions from the AI model.',
+    description: 'Izdvajanje sistemskog upita ili unutrašnjih instrukcija iz AI modela.',
     icon: Lock,
     risk: 'Critical',
     path: '/prompt-leaking',
@@ -25,7 +25,7 @@ const attacks = [
   {
     id: 'role-play',
     title: 'Role Play Attack',
-    description: 'Convincing the model to adopt a different persona or role to bypass restrictions.',
+    description: 'Uveravanje modela da usvoji drugačiju ličnost ili ulogu kako bi zaobišao ograničenja.',
     icon: AlertTriangle,
     risk: 'Medium',
     path: '/role-play',
@@ -33,12 +33,6 @@ const attacks = [
   }
 ];
 
-const stats = [
-  { label: 'Attack Types', value: '6+', icon: Target },
-  { label: 'Risk Level', value: 'Critical', icon: AlertTriangle },
-  { label: 'Models Tested', value: '10+', icon: Database },
-  { label: 'Success Rate', value: '60%', icon: Zap },
-];
 
 const Index = () => {
   return (
@@ -55,60 +49,37 @@ const Index = () => {
             
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold text-foreground">
-                LLM Security
-                <span className="block text-primary">Playground</span>
+                LLM Bezbednost
+                <span className="block text-primary">Laboratorija</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Interactive demonstrations of security vulnerabilities in Large Language Models. 
-                Learn how attacks work and how to defend against them.
+                Interaktivne demonstracije bezbednosnih ranjivosti u velikim jezičkim modelima. 
+                Naučite kako napadi funkcionišu i kako se braniti od njih.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/context-ignoring">
                 <Button size="lg" className="text-lg px-8 py-6 shadow-glow hover:shadow-cyber transition-all duration-300">
-                  Start Learning
+                  Počni učenje
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                View Documentation
-              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <Card key={index} className="bg-gradient-card border-border/50 text-center">
-                <CardContent className="pt-6">
-                  <div className="flex justify-center mb-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <stat.icon className="h-6 w-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Attack Types Section */}
       <section className="px-4">
         <div className="container mx-auto max-w-6xl space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Explore Attack Vectors
+              Istražite vektore napada
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Understand common LLM security vulnerabilities through interactive demonstrations
+              Razumite česte bezbednosne ranjivosti LLM modela kroz interaktivne demonstracije
             </p>
           </div>
 
@@ -137,7 +108,7 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="text-sm font-medium text-foreground mb-2">Example Techniques:</h4>
+                    <h4 className="text-sm font-medium text-foreground mb-2">Primeri tehnika:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {attack.examples.map((example, idx) => (
                         <li key={idx} className="flex items-center gap-2">
@@ -149,7 +120,7 @@ const Index = () => {
                   </div>
                   <Link to={attack.path} className="block">
                     <Button className="w-full group-hover:shadow-glow transition-all duration-300">
-                      Try Attack
+                      Isprobaj napad
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -160,74 +131,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Security Best Practices */}
-      <section className="px-4 py-16 bg-secondary/20">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Learn Defense Strategies
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Each attack demonstration includes comprehensive mitigation strategies 
-                and best practices to secure your LLM implementations.
-              </p>
-              <div className="space-y-3">
-                {[
-                  'Robust prompt engineering techniques',
-                  'Input validation and sanitization',
-                  'Context preservation methods',
-                  'Security monitoring and alerts'
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-success" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <Card className="bg-gradient-card border-border/50 shadow-glow">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-success" />
-                    Security Score
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span>Input Validation</span>
-                      <span className="font-medium">92%</span>
-                    </div>
-                    <div className="w-full bg-secondary rounded-full h-2">
-                      <div className="bg-success h-2 rounded-full w-[92%]"></div>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span>Context Protection</span>
-                      <span className="font-medium">78%</span>
-                    </div>
-                    <div className="w-full bg-secondary rounded-full h-2">
-                      <div className="bg-warning h-2 rounded-full w-[78%]"></div>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span>Response Filtering</span>
-                      <span className="font-medium">85%</span>
-                    </div>
-                    <div className="w-full bg-secondary rounded-full h-2">
-                      <div className="bg-primary h-2 rounded-full w-[85%]"></div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
