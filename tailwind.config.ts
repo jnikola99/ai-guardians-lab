@@ -52,6 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				'cyber-blue': 'hsl(var(--cyber-blue))',
+				'cyber-purple': 'hsl(var(--cyber-purple))',
+				'terminal-green': 'hsl(var(--terminal-green))',
+				'alert-red': 'hsl(var(--alert-red))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -86,10 +98,22 @@ export default {
 					}
 				}
 			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-cyber': 'var(--gradient-cyber)',
+				'gradient-card': 'var(--gradient-card)',
+			},
+			boxShadow: {
+				'cyber': 'var(--shadow-cyber)',
+				'glow': 'var(--shadow-glow)',
+			},
+			fontFamily: {
+				'mono': ['JetBrains Mono', 'Monaco', 'Consolas', 'monospace'],
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
